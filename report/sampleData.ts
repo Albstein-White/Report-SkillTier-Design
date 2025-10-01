@@ -1,0 +1,95 @@
+import { ReportData } from './types/report';
+
+export const sampleData: ReportData = {
+  name: 'Jordan Chen',
+  date: '2025-10-01',
+  overall: {
+    score: 78,
+    tier: 'Advanced',
+    rarity: 'Top 12% Globally',
+    percentile: 88,
+  },
+  domains: [
+    {
+      domain: 'analytical',
+      score: 82,
+      percentile: 91,
+      se: 3.2,
+      n: 24,
+      tier: 'Elite',
+    },
+    {
+      domain: 'mathematical',
+      score: 76,
+      percentile: 84,
+      se: 3.8,
+      n: 22,
+      tier: 'Advanced',
+    },
+    {
+      domain: 'verbal',
+      score: 81,
+      percentile: 89,
+      se: 2.9,
+      n: 26,
+      tier: 'Elite',
+    },
+    {
+      domain: 'memory',
+      score: 72,
+      percentile: 78,
+      se: 4.1,
+      n: 20,
+      tier: 'Advanced',
+    },
+    {
+      domain: 'spatial',
+      score: 79,
+      percentile: 87,
+      se: 3.5,
+      n: 23,
+      tier: 'Advanced',
+    },
+    {
+      domain: 'creativity',
+      score: 85,
+      percentile: 94,
+      se: 2.7,
+      n: 25,
+      tier: 'Elite',
+    },
+    {
+      domain: 'strategy',
+      score: 74,
+      percentile: 81,
+      se: 3.9,
+      n: 21,
+      tier: 'Advanced',
+    },
+    {
+      domain: 'social',
+      score: 77,
+      percentile: 85,
+      se: 3.4,
+      n: 24,
+      tier: 'Advanced',
+    },
+  ],
+  undervalued: [
+    {
+      domain: 'Creativity',
+      why: 'Your divergent thinking score places you in the top 6% globally, yet this strength may be underutilized in structured problem-solving contexts. Consider applying creative approaches to analytical challenges.',
+    },
+    {
+      domain: 'Spatial',
+      why: 'Strong mental rotation abilities suggest untapped potential in fields requiring 3D visualization. This strength pairs well with your analytical capabilities for complex system modeling.',
+    },
+  ],
+  traps: [
+    'Rushing through problems without checking edge cases',
+    'Over-reliance on first intuition in ambiguous scenarios',
+    'Neglecting to chunk information in memory-intensive tasks',
+  ],
+  consistency: 76,
+  durationSec: 2340,
+};
