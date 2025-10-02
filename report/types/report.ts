@@ -30,6 +30,8 @@ export interface ReportData {
   durationSec: number;
 }
 
+export type ReportDocT = ReportData;
+
 export interface DomainPageProps {
   domain: string;
   score: number;

@@ -2,7 +2,7 @@ import { TierBadge } from '../atoms/TierBadge';
 import { RarityTag } from '../atoms/RarityTag';
 import { RadarSVG } from '../atoms/RadarSVG';
 import { Bar } from '../atoms/Bar';
-import { ReportData as ReportDocT } from '../types/report';
+import type { ReportDocT } from '../types/report';
 
 interface ShortPageProps {
   doc: ReportDocT;
@@ -33,16 +33,16 @@ export function ShortPage({ doc }: ShortPageProps) {
             gridColumn: '1 / span 7',
             display: 'flex',
             flexDirection: 'column',
-            justifyContent: 'space-between',
-            gap: '3mm',
+            justifyContent: 'center',
+            gap: '2.5mm',
           }}
         >
-          <div style={{ fontSize: '14pt', fontWeight: 700 }}>SkillTier — Short Report</div>
-          <div className="short-report-muted" style={{ fontSize: '10pt' }}>
-            {doc.date}
+          <div style={{ fontSize: '14pt', fontWeight: 700, letterSpacing: '0.4px' }}>
+            SkillTier — Short Report
           </div>
-          <div className="short-report-muted clamp-2" style={{ fontSize: '11pt', maxWidth: '90mm' }}>
-            Snapshot of the SkillTier cognitive profile condensed into a single actionable sheet.
+          <div style={{ fontSize: '20pt', fontWeight: 700, lineHeight: 1.2 }}>{doc.name}</div>
+          <div className="short-report-muted" style={{ fontSize: '10pt', letterSpacing: '0.3px' }}>
+            {doc.date}
           </div>
         </div>
 
@@ -63,15 +63,20 @@ export function ShortPage({ doc }: ShortPageProps) {
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '2mm' }}>
               <div style={{ fontSize: '32pt', fontWeight: 700, lineHeight: 1 }}>{doc.overall.score}</div>
-              <div className="short-report-muted" style={{ fontSize: '10pt' }}>
+              <div className="short-report-muted" style={{ fontSize: '10pt', letterSpacing: '0.3px' }}>
                 Score
               </div>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '2mm' }}>
               <TierBadge tier={doc.overall.tier} />
               <RarityTag rarity={doc.overall.rarity} />
-              <div className="short-report-muted" style={{ fontSize: '10pt' }}>
-                Top {doc.overall.percentile}% percentile
+              <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.5mm' }}>
+                <div style={{ fontSize: '14pt', fontWeight: 700, lineHeight: 1 }}>
+                  Top {doc.overall.percentile}%
+                </div>
+                <div className="short-report-muted" style={{ fontSize: '9pt', letterSpacing: '0.3px' }}>
+                  Percentile
+                </div>
               </div>
             </div>
           </div>
@@ -119,10 +124,7 @@ export function ShortPage({ doc }: ShortPageProps) {
           tabIndex={0}
         >
           {doc.domains.map((domain) => (
-            <div
-              key={domain.domain}
-              style={{ display: 'flex', flexDirection: 'column', gap: '2mm' }}
-            >
+            <div key={domain.domain} className="short-report-mini-card">
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1mm' }}>
                 <div style={{ fontSize: '10pt', fontWeight: 600 }}>{formatDomainName(domain.domain)}</div>
                 <TierBadge tier={domain.tier} size="sm" />

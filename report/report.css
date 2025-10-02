@@ -52,6 +52,17 @@
   box-shadow: 0 0 0 1.2px var(--report-accent);
 }
 
+.short-report-mini-card {
+  display: flex;
+  flex-direction: column;
+  gap: 2mm;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 4mm;
+  padding: 3mm;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-sizing: border-box;
+}
+
 .short-report-muted {
   color: #9ba1a6;
 }
