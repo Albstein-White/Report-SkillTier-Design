@@ -1,6 +1,6 @@
-import { ReportData } from './types/report';
+import type { ReportDocT } from './types/report';
 
-export const sampleData: ReportData = {
+export const sampleData: ReportDocT = {
   name: 'Jordan Chen',
   date: '2025-10-01',
   overall: {
